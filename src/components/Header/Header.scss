@@ -1,0 +1,11 @@
+$primary-color: yellow;
+
+.bb{
+  color:$primary-color;
+  background-color: green;
+  &:hover{
+    .cc{
+      background-color: grey;
+    }
+  }
+}

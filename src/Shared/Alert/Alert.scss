@@ -1,0 +1,49 @@
+// Default Alert
+$BgColor :rgb(29 31 32 / 71%);
+$FontColor:#BCC0FF;
+$BorderColor:#464A99;
+
+// ** Warning
+$BgWarning: rgb(255 197 23 / 5%);
+$ColorWarning: #fcd253;
+$BorderWarning: rgba(255, 213, 0, 0.793);
+
+// ** Error
+$BgError: rgb(192 29 29 / 15%);
+$ColorError: #ef8d8dfa;
+$BorderError: rgba(255, 25, 0, 0.322);
+
+@mixin Alert($name,$fontcolor, $border,$bgcolor){
+.#{$name}{
+  position: relative;
+  margin: auto;
+  width:50rem;
+  border: 0.06rem solid $border;
+  border-radius: 0.5rem;
+  background-color: $bgcolor;
+  color: $fontcolor;
+  padding: 0.8rem;
+  text-align: start;
+  margin: 0.8rem auto ;
+  
+.alert-title{
+  margin-bottom: 0.8rem;
+  display: flex;
+  justify-content:start;
+  align-items: center;
+  gap: 0.5rem;
+ 
+}
+.alert-description{
+  line-height: 1.5rem;
+}
+.close{
+  position: absolute;
+  right:1rem;
+  top:1rem
+}
+}
+}
+@include Alert("alert-info",$FontColor,$BorderColor,$BgColor);
+@include Alert("alert-error",$ColorError,$BorderError,$BgError);
+@include Alert("alert-warning",$ColorWarning,$BorderWarning,$BgWarning);
